@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🍴 SILVER PLATTER</title>
+    <link rel="stylesheet" href="/CSS/style.css">
+
+    <script type="text/javascript">
+        // <![CDATA[
+        var speed=33; // lower number for faster
+        var drops=100; // number of 'drops'
+        var colour="#8B92B9"; // colour of drops (generally grey!)
+        
+        /***************************\
+        *   Rainy Afternoon Effect  *
+        *(c)2011-13 mf2fm web-design*
+        *  http://www.mf2fm.com/rv  *
+        * DON'T EDIT BELOW THIS BOX *
+        \***************************/
+        
+        var flks=new Array();
+        var flkx=new Array();
+        var flky=new Array();
+        var fldy=new Array();
+        var swide, shigh, boddie;
+        var ie_version=(navigator.appVersion.indexOf("MSIE")!=-1)?parseFloat(navigator.appVersion.split("MSIE")[1]):false;
+        
+        function addLoadEvent(funky) {
+          var oldonload=window.onload;
+          if (typeof(oldonload)!='function') window.onload=funky;
+          else window.onload=function() {
+            if (oldonload) oldonload();
+            funky();
+          }
+        }
+        
+        addLoadEvent(storm);
+        
+        function storm() { if (document.getElementById) {
+          var r1, r2;
+          boddie=document.createElement("div");
+          boddie.style.position="fixed";
+          boddie.style.top="0px";
+          boddie.style.left="0px";
+          boddie.style.width="1px";
+          boddie.style.height="1px";
+          boddie.style.overflow="visible";
+          boddie.style.backgroundColor="transparent";
+          document.body.appendChild(boddie);
+          set_width();
+          for (var i=0; i<drops; i++) {
+            flks[i]=createDiv(16, 2, "transparent");
+            r1=createDiv(6, 2, colour);
+            r1.style.top="10px";
+            r1.style.left="0px";
+            flks[i].appendChild(r1);
+            r2=createDiv(10, 2, colour);
+            r2.style.top="0px";
+            r2.style.left="0px";
+            if (ie_version && ie_version<10) r2.style.filter="alpha(opacity=25)";
+            else r2.style.opacity=0.25;
+            flks[i].appendChild(r2);
+            flkx[i]=2*Math.floor(Math.random()*swide/2);
+            flky[i]=Math.floor(Math.random()*shigh);
+            fldy[i]=2+Math.floor(Math.random()*4);
+            flks[i].style.left=flkx[i]+"px";
+            flks[i].style.top=flky[i]+"px";
+            boddie.appendChild(flks[i]);
+          }
+          setInterval("cats_and_dogs()", speed);
+        }}
+        
+        function createDiv(height, width, colour) {
+          var div=document.createElement("div");
+          div.style.position="absolute";
+          div.style.height=height+"px";
+          div.style.width=width+"px";
+          div.style.overflow="hidden";
+          div.style.backgroundColor=colour;
+          return (div);
+        }
+        
+        window.onresize=set_width;
+        function set_width() {
+          var sw_min=999999;
+          var sh_min=999999;
+          if (document.documentElement && document.documentElement.clientWidth) {
+            sw_min=document.documentElement.clientWidth;
+            sh_min=document.documentElement.clientHeight;
+          }
+          if (typeof(self.innerWidth)!="undefined" && self.innerWidth) {
+            if (self.innerWidth<sw_min) sw_min=self.innerWidth;
+            if (self.innerHeight<sh_min) sh_min=self.innerHeight;
+          }
+          if (document.body.clientWidth) {
+            if (document.body.clientWidth<sw_min) sw_min=document.body.clientWidth;
+            if (document.body.clientHeight<sh_min) sh_min=document.body.clientHeight;
+          }
+          if (sw_min==999999 || sh_min==999999) {
+            sw_min=800;
+            sh_min=600;
+          }
+          swide=sw_min-2;
+          shigh=sh_min;
+        }
+        
+        function cats_and_dogs(c) {
+          var i, x, o=0;
+          for (i=0; i<drops; i++) {
+            flky[i]+=fldy[i];
+            if (flky[i]>=shigh-16) {
+              flky[i]=-16;
+              fldy[i]=2+Math.floor(Math.random()*4);
+              flkx[i]=2*Math.floor(Math.random()*swide/2);
+              flks[i].style.left=flkx[i]+"px";
+            }
+            flks[i].style.top=flky[i]+"px";
+          }
+        }
+        // ]]>
+        </script>
+</head>
+
+<body>
+    <img class="logo" src="/IMAGES/light.png" alt="Banner Image for the website Silver Platter.">
+    <nav>
+      <ul>
+        <li><a href="/HTML/index.html">home</a></li>
+        <li><a href="/HTML/about.html">about</a></li>
+        <li><a href="/HTML/blog.html">blog</a></li>
+        <li><a href="/HTML/gallery.html">gallery</a></li>
+        <li><a href="/HTML/links.html">links</a></li>
+     </ul>
+</nav>
+<main>
+    <h1>GOODNESS, BLOG POSTING?</h1>
+    <h2>IN THIS DAY AND AGE?</h2>
+    <p class="desc" style="text-align: center;">BLOG STUFF! Y'know, a thing you'd see back in the old days of the internet. But I wanna emulate that! Because I know what I'm doing, I promise!</p>
+    <br>
+
+    <p class="date">
+        2.19.2024
+    </p>
+    <p class="desc"><a class="bloglink" href="#">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad magni itaque tempore vel autem. Excepturi aliquid dignissimos mollitia ex quas explicabo fuga blanditiis illo ut in quidem, veritatis labore nulla?
+    </a></p>
+    <hr>
+    <p class="date">
+        2.17.2024
+    </p>
+    <p class="desc"><a class="bloglink" href="#">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit delectus consequatur in necessitatibus voluptatibus vitae facere id architecto soluta saepe atque consequuntur debitis, quae vel rem ratione adipisci velit obcaecati.
+    </a></p>
+    <hr>
+    <p class="date">
+        2.09.2024
+    </p>
+    <p class="desc"><a class="bloglink" href="#">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum eius illum deserunt, fugit totam repudiandae enim officiis, labore repellat ad libero fugiat quod. Officiis blanditiis ad doloribus nostrum! Hic, odio.
+    </a></p>
+    <hr>
+    <p class="date">
+        2.02.2024
+    </p>
+    <p class="desc"><a class="bloglink" href="#">
+        Let's be real, if I wanted to save myself the trouble of not having to code this whole thing out by hand, I'd use Dreamwidth. Plain and simple.
+    </a></p>
+    <!-- should actually make that dreamwidth account soon i think... -->
+</main>
+<footer>
+    <p>
+        Silver Platter, 2024 - the end of time!
+    </p>
+</footer>
+</body>
+
+</html>

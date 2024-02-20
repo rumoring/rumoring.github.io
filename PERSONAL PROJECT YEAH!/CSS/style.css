@@ -1,0 +1,122 @@
+body, h1, p, p, ul, li{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-image: url(/IMAGES/lightbg.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #b0c4de;
+    color: #050922;
+}
+
+a:hover{
+    background-color: #f0f8ff;
+    text-decoration: dashed #384058;
+}
+
+nav ul{
+   list-style: none;
+   text-align: center;
+   padding: 20px;
+   margin: 10px;
+}
+
+nav ul li{
+    display: inline;
+    margin: 10px 20px;
+}
+
+nav a{
+    text-decoration: 3px dashed #384058;
+    color: #384058;
+    font-weight: bolder;
+    font-size: 1.5rem;
+}
+
+main{
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: #f0f8ff;
+    padding: 20px;
+    border: 2px #384058 solid;
+    box-shadow: 2 2 #384058;
+}
+
+.logo {
+    height: 350px;
+    width: auto;
+    margin-left: 35%;
+    margin-right: 35%;
+}
+
+h1{
+    background-color: #050922;
+    color: #f0f8ff;
+    padding: 5px;
+    text-align: center;
+    font-style: italic
+}
+
+h2{
+    background-color: #384058;
+    color: #f0f8ff;
+    padding: 5px;
+    font-style: oblique;
+    text-align: center;
+}
+
+hr {
+    text-decoration-style: dashed;
+    color: #b0c4de;
+}
+
+a {
+    color: #384058;
+    font-weight: 700;
+}
+
+.thumb {
+    height: 115px;
+    width: auto;
+}
+
+.date {
+    background-color: #384058;
+    color: #f0f8ff;
+    font-weight: bold;
+    padding-left: 4px;
+}
+
+.desc {
+    font-style: italic;
+}
+
+.bloglink {
+    text-decoration: none;
+    color: #384058;
+}
+
+.bloglink:hover {
+    background-color: #384058;
+    color: #f0f8ff;
+}
+
+.bloglink:visited {
+    background-color: #b0c4de;
+    color: #384058;
+    font-style: italic;
+}
+
+footer{
+    background-color: #384058;
+    color: #f0f8ff;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 15px;
+    text-align: center;
+}
+
